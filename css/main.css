@@ -113,7 +113,7 @@ footer a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    max-height: 75vh;
+    max-height: 82vh;
     max-width: none;
     padding: 0px 75px;
     column-gap: 30px;
