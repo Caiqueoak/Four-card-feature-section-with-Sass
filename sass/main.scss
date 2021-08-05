@@ -1,0 +1,130 @@
+@import "variables";
+
+//// MOBILE-VERSION ////
+
+.main-container {
+  @include centered-flex;
+  flex-direction: column;
+  padding: 50px 15px;
+  row-gap: 60px;
+}
+
+// HEADING
+.heading {
+  text-align: center;
+  @include centered-flex;
+  flex-direction: column;
+
+  .main-headers {
+    font-size: 1.76rem;
+  }
+  .header1 {
+    font-weight: 200;
+  }
+  .header2 {
+    font-weight: 600;
+    color: $Very-Dark-Blue;
+  }
+  .header3 {
+    padding-top: 15px;
+    font-size: 1.1rem;
+    max-width: 550px;
+    color: $Grayish-Blue;
+  }
+}
+
+// BOXES
+.boxes-container {
+  @include centered-flex;
+  flex-direction: column;
+  row-gap: 20px;
+  max-width: 375px;
+
+  .boxes {
+    display: flex;
+    flex-direction: column;
+    border-top: 3px solid;
+    border-radius: 5px;
+    padding: 23px 28px 30px;
+    row-gap: 3px;
+    box-shadow: 0 1px 2px 0px $Very-Dark-Blue;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $Very-Dark-Blue;
+    }
+    .description-text {
+      font-size: 0.95rem;
+      color: $Grayish-Blue;
+      padding-bottom: 25px;
+    }
+    .image {
+      align-self: flex-end;
+    }
+  }
+  .supervisor-box {
+    border-top-color: $Cyan;
+  }
+  .team-builder-box {
+    border-top-color: $Red;
+  }
+  .karma-box {
+    border-top-color: $Orange;
+  }
+  .calculator-box {
+    border-top-color: $Blue;
+  }
+}
+
+// FOOTER
+footer {
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+
+  a {
+    font-size: 0.8rem;
+  }
+}
+
+//// DESKTOP-VERSION ////
+
+@media screen and (min-width: 1000px) {
+  .main-container {
+    padding: 40px 15px;
+    row-gap: 60px;
+  }
+  .heading {
+    .main-headers {
+      font-size: 2.6rem;
+    }
+  }
+  .boxes-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    max-height: 75vh;
+    max-width: none;
+    padding: 0px 75px;
+    column-gap: 30px;
+    row-gap: 30px;
+    .boxes {
+      .image {
+        padding-top: 10px;
+      }
+    }
+    .supervisor-box {
+      grid-area: 1/1/3/2;
+    }
+    .team-builder-box {
+      grid-area: 1/2/2/3;
+    }
+    .karma-box {
+      grid-area: 2/2/3/3;
+    }
+    .calculator-box {
+      grid-area: 1/3/3/4;
+    }
+  }
+}
